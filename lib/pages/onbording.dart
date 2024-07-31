@@ -14,6 +14,8 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   final controller = OnboardingItems();
   final pageController = PageController();
+  Color color1 = Color.fromARGB(255, 207, 204, 204);
+  Color color2 = Color.fromARGB(255, 207, 204, 204);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,11 +60,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           height: 50,
                           width: 50,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.amber),
+                              shape: BoxShape.circle, color: color1),
                           child: IconButton(
-                            onPressed: () => pageController.previousPage(
-                                curve: Curves.easeIn,
-                                duration: Duration(milliseconds: 600)),
+                            onPressed: () {
+                              pageController.previousPage(
+                                  curve: Curves.easeIn,
+                                  duration: Duration(milliseconds: 600));
+                              color1 = Colors.amber;
+                              color2 = Color.fromARGB(255, 207, 204, 204);
+                              setState(() {});
+                            },
                             icon: Icon(Icons.arrow_back),
                           ),
                         ),
@@ -70,11 +77,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           height: 50,
                           width: 50,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.amber),
+                              shape: BoxShape.circle, color: color2),
                           child: IconButton(
-                            onPressed: () => pageController.nextPage(
-                                curve: Curves.easeIn,
-                                duration: Duration(milliseconds: 600)),
+                            onPressed: () {
+                              pageController.nextPage(
+                                  curve: Curves.easeIn,
+                                  duration: Duration(milliseconds: 600));
+                              color2 = Colors.amber;
+                              color1 = Color.fromARGB(255, 207, 204, 204);
+                              setState(() {});
+                            },
                             icon: Icon(Icons.arrow_forward),
                           ),
                         ),

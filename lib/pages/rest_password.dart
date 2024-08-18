@@ -30,7 +30,7 @@ class _RestPasswordPageState extends State<RestPasswordPage> {
                   textFieldName: 'Confirm Password'),
               SizedBox(height: 50),
               AppButton(
-                onPressed: () {},
+                //onPressed: () {},
                 name: 'SUBMIT',
               )
             ],

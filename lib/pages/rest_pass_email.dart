@@ -30,7 +30,7 @@ class _ResetPasswordEmailPageState extends State<ResetPasswordEmailPage> {
                   ),
                   SizedBox(height: 30),
                   AppButton(
-                    onPressed: () {
+                    onPressed: () async {
                       Navigator.push(
                           context,
                           MaterialPageRoute(

@@ -1,5 +1,8 @@
+import 'package:courses_app/pages/home.dart';
+import 'package:courses_app/pages/login.dart';
 import 'package:courses_app/widgets/app_button.dart';
 import 'package:courses_app/widgets/app_textfield.dart';
+import 'package:courses_app/widgets/sign_in_with.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +81,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     credentials.user!.updateDisplayName(nameController.text);
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Account created successfully')));
+                    await Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (ctx) => const HomePage()));
                   }
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'weak.password') {
@@ -94,7 +99,16 @@ class _SignUpPageState extends State<SignUpPage> {
                 }
               },
               name: 'LOGIN',
-            )
+            ),
+            SizedBox(height: 30),
+            SignInWith(
+              haveAccount: 'Already  have an account',
+              buttonName: 'Login Here',
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (ctx) => LoginPage()));
+              },
+            ),
           ],
         )),
       ),

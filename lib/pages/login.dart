@@ -1,5 +1,7 @@
+import 'package:courses_app/pages/sign_up.dart';
 import 'package:courses_app/widgets/app_button.dart';
 import 'package:courses_app/widgets/app_textfield.dart';
+import 'package:courses_app/widgets/sign_in_with.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -32,7 +34,16 @@ class _LoginPageState extends State<LoginPage> {
             AppButton(
               // onPressed: () {},
               name: 'LOGIN',
-            )
+            ),
+            SizedBox(height: 30),
+            SignInWith(
+              haveAccount: 'Don\'t have an account',
+              buttonName: 'Sign Up Here',
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (ctx) => SignUpPage()));
+              },
+            ),
           ],
         )),
       ),

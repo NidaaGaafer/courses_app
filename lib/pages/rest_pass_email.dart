@@ -14,7 +14,8 @@ class _ResetPasswordEmailPageState extends State<ResetPasswordEmailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
             Form(

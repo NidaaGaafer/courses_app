@@ -41,7 +41,8 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
         child: Form(
             child: Column(
           children: [
@@ -101,13 +102,15 @@ class _SignUpPageState extends State<SignUpPage> {
               name: 'LOGIN',
             ),
             SizedBox(height: 30),
-            SignInWith(
-              haveAccount: 'Already  have an account',
-              buttonName: 'Login Here',
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (ctx) => LoginPage()));
-              },
+            Expanded(
+              child: SignInWith(
+                haveAccount: 'Already  have an account',
+                buttonName: 'Login Here',
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (ctx) => LoginPage()));
+                },
+              ),
             ),
           ],
         )),

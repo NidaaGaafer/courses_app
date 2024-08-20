@@ -13,7 +13,8 @@ class _RestPasswordPageState extends State<RestPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
         child: Form(
             child: Expanded(
           child: Column(

@@ -32,13 +32,15 @@ class SignInWith extends StatelessWidget {
                 onPressed: () {},
                 child: Row(
                   children: [
-                    Image.asset('assets/images/google.png'),
+                    Image.asset('assets/images/facebook.png',
+                        height: 60, width: 60),
                     Text('Sign In With Facebook')
                   ],
                 )),
             ElevatedButton(
                 onPressed: () {},
-                child: Image.asset('assets/images/facebook.png'))
+                child: Image.asset('assets/images/google.png',
+                    height: 60, width: 60))
           ],
         ),
         Row(

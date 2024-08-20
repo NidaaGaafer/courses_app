@@ -1,4 +1,6 @@
 import 'package:courses_app/firebase_options.dart';
+import 'package:courses_app/pages/login.dart';
+import 'package:courses_app/pages/sign_up.dart';
 import 'package:courses_app/pages/splash.dart';
 import 'package:courses_app/services/prefe_service.dart';
 import 'package:device_preview/device_preview.dart';
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashPage(),
+      home: LoginPage(),
     );
   }
 }
